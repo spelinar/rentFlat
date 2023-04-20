@@ -1,9 +1,10 @@
 <template>
-  <v-main>
-    <router-view />
-  </v-main>
+<v-div>dupa</v-div>
 </template>
 
 <script lang="ts" setup>
-  //
 </script>
+
+<style scoped>
+
+</style>

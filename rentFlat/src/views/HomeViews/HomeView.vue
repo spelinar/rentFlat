@@ -1,5 +1,5 @@
 <template>
-<v-div>dupa</v-div>
+<v-card-title>dssdsds</v-card-title>
 </template>
 
 <script lang="ts" setup>

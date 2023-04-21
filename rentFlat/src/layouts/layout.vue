@@ -38,10 +38,8 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container>
-        <router-view>
-
-        </router-view>
+      <v-container style="max-width: 1280px" class="px-0">
+        <router-view />
       </v-container>
     </v-main>
   </v-app>

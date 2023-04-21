@@ -1,4 +1,6 @@
 const pl = {
-loginTitle: 'Zaloguj'
+  loginPanel:{
+    loginTitle: 'Zaloguj'
+  }
 }
 export default pl

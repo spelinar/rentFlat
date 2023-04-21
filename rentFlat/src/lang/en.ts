@@ -1,5 +1,6 @@
 const en = {
-  loginTitle: 'login'
-
+  loginPanel: {
+    loginTitle: 'login'
+  }
 }
 export default en

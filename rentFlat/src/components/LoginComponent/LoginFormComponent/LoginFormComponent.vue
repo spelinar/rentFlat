@@ -1,6 +1,6 @@
 <template>
   <v-sheet max-width="500" class="mx-auto">
-    <v-card-title class="text-center"><h1>Zaloguj</h1></v-card-title>
+    <v-card-title class="text-center"><h1>{{$t('loginTitle')}}</h1></v-card-title>
     <v-img width="100px" class="imageHome" :src="HomeVectorImage"></v-img>
     <v-form fast-fail @submit.prevent>
       <v-text-field

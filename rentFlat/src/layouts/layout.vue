@@ -1,23 +1,42 @@
 <template>
   <v-app>
     <v-app-bar
-      color="teal-darken-4"
+      color="#6A5ACD"
+      prominent
     >
-      <template v-slot:image>
-        <v-img
-          gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"
-        ></v-img>
-      </template>
-      <template v-slot:extension>
-        <v-tabs align-with-title center-active>
-          <v-tab>Tab 1</v-tab>
+      <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>My files</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-menu width="100px">
+        <template v-slot:activator="{ props }">
+          <v-btn v-bind="props" variant="text" icon="mdi-dots-vertical" />
+        </template>
+        <v-list>
+          <v-list-item>
+            <toggle-theme />
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn @click="goToLogin" variant="text" icon="mdi-login" />
 
-          <v-tab>Tab 2</v-tab>
-
-          <v-tab>Tab 3</v-tab>
-        </v-tabs>
-      </template>
     </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+    >
+      <v-list-item
+        prepend-avatar="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRoT6NNDUONDQmlthWrqIi_frTjsjQT4UZtsJsuxqxLiaFGNl5s3_pBIVxS6-VsFUP_"
+        title="User"
+      ></v-list-item>
+      <v-divider></v-divider>
+
+      <v-list density="compact" nav>
+        <v-list-item prepend-icon="mdi-view-dashboard" title="Home" value="home"></v-list-item>
+        <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <v-container>
         <router-view>
@@ -29,6 +48,16 @@
 </template>
 
 <script lang="ts" setup>
+
+import {ref} from "vue";
+import ToggleTheme from "@/components/ToggleTheme/ToggleTheme.vue";
+import router from "@/router";
+
+const drawer = ref(false)
+
+function goToLogin() {
+  router.push({path: '/login'})
+}
 
 </script>
 

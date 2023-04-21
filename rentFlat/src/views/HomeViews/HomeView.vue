@@ -1,5 +1,5 @@
 <template>
-<v-div>dupa</v-div>
+<v-div></v-div>
 </template>
 
 <script lang="ts" setup>

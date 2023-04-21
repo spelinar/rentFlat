@@ -7,11 +7,16 @@ const routes = [
     component: () => import('@/layouts/layout.vue'),
     children: [
       {
-        path: '/home',
+        path: '/',
         name: 'HomeView',
         component: () => import('@/views/HomeViews/HomeView.vue'),
       },
     ],
+  },
+  {
+    path: '/login',
+    name: 'LoginPanelView',
+    component: () => import('@/views/LoginPanelView/LoginPanelView.vue')
   },
 ]
 

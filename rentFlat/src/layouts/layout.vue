@@ -5,7 +5,7 @@
       prominent
     >
       <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>My files</v-toolbar-title>
+      <v-toolbar-title>{{$t('layout.title')}}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-menu width="100px">
         <template v-slot:activator="{ props }">
@@ -14,6 +14,9 @@
         <v-list>
           <v-list-item>
             <toggle-theme />
+          </v-list-item>
+          <v-list-item>
+            <lang-selector-dialog />
           </v-list-item>
         </v-list>
       </v-menu>
@@ -50,6 +53,8 @@
 import {ref} from "vue";
 import ToggleTheme from "@/components/ToggleTheme/ToggleTheme.vue";
 import router from "@/router";
+import ChangeLang from "@/components/LangSelector/ChangeLang.vue";
+import LangSelectorDialog from "@/components/LangSelector/LangSelectorDialog.vue";
 
 const drawer = ref(false)
 

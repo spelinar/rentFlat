@@ -1,5 +1,8 @@
 const en = {
-  loginPanel: {
+  layout: {
+    title: 'My rent'
+  },
+  loginPanelView: {
     loginTitle: 'login'
   }
 }

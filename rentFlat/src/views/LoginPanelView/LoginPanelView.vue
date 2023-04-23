@@ -1,19 +1,18 @@
 <template>
 <v-container class="mt-16">
-
+  <v-btn
+    @click="goBack"
+    class="ma-2"
+    color="primary"
+  >
+    <v-icon
+      start
+      icon="mdi-arrow-left"
+    ></v-icon>
+    Back
+  </v-btn>
   <v-sheet width="300" class="mx-auto mt-16">
-    <v-btn
-      @click="goBack"
-      class="ma-2"
-      color="primary"
-    >
-      <v-icon
-        start
-        icon="mdi-arrow-left"
-      ></v-icon>
-      Back
-    </v-btn>
-    <v-card-title class="text-center">Login</v-card-title>
+    <v-card-title class="text-center">{{$t('loginPanelView.loginTitle')}}</v-card-title>
     <v-row justify="center" align-content="center">
         <div style="width: 150px" class="d-flex align-center justify-center mb-5">
         <v-img :src="VectorIconHome"></v-img>
@@ -47,10 +46,12 @@
   <div class="circleLeftTop"></div>
   <div class="circleRightBottom"></div>
 </v-container>
+  <change-lang />
 </template>
 
 <script lang="ts" setup>
 import HomeLogo from '@/assets/home-vector-icon.png'
+import ChangeLang from "@/components/LangSelector/ChangeLang.vue";
 
 function goBack() {
   window.history.back()

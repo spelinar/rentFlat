@@ -6,10 +6,9 @@
     >
       <template v-slot:activator="{ props }">
         <v-btn
-          color="primary"
           v-bind="props"
         >
-          Open Dialog
+          <v-icon>mdi-translate</v-icon>
         </v-btn>
       </template>
 

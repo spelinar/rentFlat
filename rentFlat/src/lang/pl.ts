@@ -1,5 +1,8 @@
 const pl = {
-  loginPanel:{
+  layout: {
+    title: 'Mój wynajem'
+  },
+  loginPanelView:{
     loginTitle: 'Zaloguj'
   }
 }

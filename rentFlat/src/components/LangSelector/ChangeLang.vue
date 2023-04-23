@@ -13,6 +13,7 @@ function toggleLanguage() {
   } else {
     locale.value = 'en';
   }
+  localStorage.setItem('lang', locale.value)
   console.log(locale.value)
 }
 </script>

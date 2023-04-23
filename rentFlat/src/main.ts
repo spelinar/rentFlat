@@ -19,13 +19,9 @@ import {i18n} from "@/plugins/i18n";
 
 const app = createApp(App)
 
-const vue = {
-  vuetify,
-  router,
-  pinia: createPinia(),
-}
-
 registerPlugins(app)
-
+app.use(router)
+app.use(vuetify)
 app.use(i18n)
+app.use(createPinia)
 app.mount('#app')

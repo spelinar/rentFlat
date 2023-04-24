@@ -7,6 +7,7 @@
       <template v-slot:activator="{ props }">
         <v-btn
           v-bind="props"
+          variant="text"
         >
           <v-icon>mdi-translate</v-icon>
         </v-btn>

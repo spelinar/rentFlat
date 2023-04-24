@@ -7,7 +7,7 @@
       tile
       flat
       width="100%"
-      color="teal"
+      color="primary"
       dark
       height="100px"
       class="d-flex align-center justify-center"

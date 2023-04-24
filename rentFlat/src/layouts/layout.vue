@@ -7,7 +7,7 @@
       <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>{{$t('layout.title')}}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-menu width="100px">
+      <v-menu width="100px" v-if="mobile">
         <template v-slot:activator="{ props }">
           <v-btn v-bind="props" variant="text" icon="mdi-dots-vertical" />
         </template>
@@ -26,7 +26,6 @@
 
     <v-navigation-drawer
       v-model="drawer"
-      temporary
     >
       <v-list-item
         prepend-avatar="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRoT6NNDUONDQmlthWrqIi_frTjsjQT4UZtsJsuxqxLiaFGNl5s3_pBIVxS6-VsFUP_"
@@ -41,9 +40,9 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container style="max-width: 1280px" class="px-0">
+      <div class="ma-10">
         <router-view />
-      </v-container>
+      </div>
     </v-main>
     <app-footer-component />
 
@@ -58,12 +57,15 @@ import router from "@/router";
 import ChangeLang from "@/components/LangSelector/ChangeLang.vue";
 import LangSelectorDialog from "@/components/LangSelector/LangSelectorDialog.vue";
 import AppFooterComponent from "@/components/AppFooterComponent/AppFooterComponent.vue";
+import {useDisplay} from "vuetify";
 
 const drawer = ref(false)
 
 function goToLogin() {
   router.push({path: '/login'})
 }
+
+const {mobile} = useDisplay()
 
 </script>
 

@@ -5,8 +5,7 @@
       prominent
     >
       <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>{{$t('layout.title')}}</v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-toolbar-title mobile-breakpoint="580">dupa</v-toolbar-title>
       <v-menu width="100px" v-if="mobile">
         <template v-slot:activator="{ props }">
           <v-btn v-bind="props" variant="text" icon="mdi-dots-vertical" />
@@ -26,6 +25,8 @@
 
     <v-navigation-drawer
       v-model="drawer"
+      floating
+      permanent
     >
       <v-list-item
         prepend-avatar="https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRoT6NNDUONDQmlthWrqIi_frTjsjQT4UZtsJsuxqxLiaFGNl5s3_pBIVxS6-VsFUP_"

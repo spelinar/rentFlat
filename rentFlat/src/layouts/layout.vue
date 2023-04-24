@@ -5,25 +5,31 @@
       prominent
     >
       <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title mobile-breakpoint="580">dupa</v-toolbar-title>
+      <v-toolbar-title>Wynajem</v-toolbar-title>
       <v-menu width="100px" v-if="mobile">
         <template v-slot:activator="{ props }">
-          <v-btn v-bind="props" variant="text" icon="mdi-dots-vertical" />
+          <v-btn v-bind="props" variant="text">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
         </template>
         <v-list>
           <v-list-item>
-            <toggle-theme />
+            <toggle-theme/>
           </v-list-item>
           <v-list-item>
-            <lang-selector-dialog />
+            <lang-selector-dialog/>
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn @click="goToLogin" variant="text" icon="mdi-login" />
-
+      <v-row class="d-flex justify-end mr-7">
+        <toggle-theme/>
+        <change-lang/>
+        <v-btn @click="goToLogin" variant="text" icon="mdi-login"/>
+      </v-row>
     </v-app-bar>
 
     <v-navigation-drawer
+      color="#F7F7F9"
       v-model="drawer"
       floating
       permanent
@@ -35,17 +41,18 @@
       <v-divider></v-divider>
 
       <v-list density="compact" nav>
-        <v-list-item @click="goToUserPage" prepend-icon="mdi-view-dashboard" title="Home" value="user-page"></v-list-item>
-        <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
+        <v-list-item @click="goToHome" prepend-icon="mdi-view-dashboard" title="Home"
+                     value="user-page"></v-list-item>
+        <v-list-item @click="goToUserPage" prepend-icon="mdi-forum" title="User page" value="about"></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-main>
+    <v-main class="background">
       <div class="ma-10">
-        <router-view />
+        <router-view/>
       </div>
     </v-main>
-    <app-footer-component />
+    <app-footer-component class="app-footer"/>
 
   </v-app>
 </template>
@@ -65,6 +72,11 @@ const drawer = ref(false)
 function goToLogin() {
   router.push({path: '/login'})
 }
+
+function goToHome() {
+  router.push({path: '/home'})
+}
+
 function goToUserPage() {
   router.push({path: '/user-page'})
 }

@@ -23,6 +23,11 @@ const routes = [
     name: 'LoginPanelView',
     component: () => import('@/views/LoginPanelView/LoginPanelView.vue')
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'error404View',
+    component: () => import('@/views/errors/error404View.vue')
+  }
 ]
 
 const router = createRouter({

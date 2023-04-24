@@ -1,8 +1,8 @@
 <template>
-  <v-card>
-    <v-row justify="center">
-    <v-avatar rounded="0" size="150">
-    <v-img width="200px" :src="userAvatar"></v-img>
+  <v-card elevation="6" rounded>
+    <v-row justify="center" class="mt-5">
+    <v-avatar rounded="1" size="120">
+    <v-img width="200px" :src="UserAvatar"></v-img>
     </v-avatar>
     </v-row>
     <v-card-text class="text-center mt-5"><h2>{{userDetails.username}} {{userDetails.surname}}</h2></v-card-text>
@@ -12,9 +12,7 @@
     <v-container>
     <h2>Details</h2>
       <v-divider class="mt-2" />
-      <v-list class="pa-0">
         <v-list-item class="ma-0" v-for="(key, index) in Object.keys(userDetails)" :key="index">{{key}} : {{userDetails[key]}}</v-list-item>
-      </v-list>
     </v-container>
     <v-row justify="center" class="pb-5">
       <v-btn class="mr-2" color="primary">Edit</v-btn>
@@ -31,13 +29,15 @@ const UserAvatar = userAvatar
 
 const userDetails = {
   username: 'Roman',
-  surname: 'Spelina',
-  email: 'spelina@gmail.com',
+  surname: 'Roman',
+  email: 'Roman@gmail.com',
   role: 'admin',
   contactNumber: '886412188',
   language: 'Polski',
   country: 'Wrocław'
 }
+
+const translationKeyUserDetails = ['Imię uźytkownika', 'Nazwisko', 'Email', 'Numer Kontaktowy', 'Język', 'country'];
 
 </script>
 

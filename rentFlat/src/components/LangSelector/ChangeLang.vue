@@ -1,5 +1,7 @@
 <template>
-<v-btn @click="toggleLanguage">dupa</v-btn>
+<v-btn variant="text" icon @click="toggleLanguage">
+  <v-icon>mdi-translate</v-icon>
+</v-btn>
 </template>
 
 <script lang="ts" setup>

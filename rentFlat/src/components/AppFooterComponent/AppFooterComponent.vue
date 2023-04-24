@@ -7,12 +7,14 @@
       tile
       flat
       width="100%"
-      color="primary"
+      color="#F7F7F9"
       dark
       height="100px"
       class="d-flex align-center justify-center"
     >
-      &copy; 2023
+     <v-row >
+       <v-card-text class="text-center">&copy; 2023</v-card-text>
+     </v-row>
     </v-card>
   </v-footer>
   </div>

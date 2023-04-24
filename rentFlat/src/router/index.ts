@@ -11,6 +11,11 @@ const routes = [
         name: 'HomeView',
         component: () => import('@/views/HomeViews/HomeView.vue'),
       },
+      {
+        path: '/user-page',
+        name: 'UserViews',
+        component: () => import('@/views/UserViews/UserViews.vue')
+      }
     ],
   },
   {

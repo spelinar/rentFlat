@@ -35,7 +35,7 @@
       <v-divider></v-divider>
 
       <v-list density="compact" nav>
-        <v-list-item prepend-icon="mdi-view-dashboard" title="Home" value="home"></v-list-item>
+        <v-list-item @click="goToUserPage" prepend-icon="mdi-view-dashboard" title="Home" value="user-page"></v-list-item>
         <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -64,6 +64,9 @@ const drawer = ref(false)
 
 function goToLogin() {
   router.push({path: '/login'})
+}
+function goToUserPage() {
+  router.push({path: '/user-page'})
 }
 
 const {mobile} = useDisplay()

@@ -45,6 +45,8 @@
         <router-view />
       </v-container>
     </v-main>
+    <app-footer-component />
+
   </v-app>
 </template>
 
@@ -55,6 +57,7 @@ import ToggleTheme from "@/components/ToggleTheme/ToggleTheme.vue";
 import router from "@/router";
 import ChangeLang from "@/components/LangSelector/ChangeLang.vue";
 import LangSelectorDialog from "@/components/LangSelector/LangSelectorDialog.vue";
+import AppFooterComponent from "@/components/AppFooterComponent/AppFooterComponent.vue";
 
 const drawer = ref(false)
 
